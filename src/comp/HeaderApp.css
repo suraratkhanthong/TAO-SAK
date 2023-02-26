@@ -206,10 +206,11 @@ ul {
  display: none;
   /* display: block; */
   width: 140px;
-  height: 65px;
+  /* height: 65px; */
   color: #ffffff;
   background-color: #9c9c9c;
   text-align: center;
+  padding: 15px;
 }
 
 .nav__menu-items:hover {
