@@ -197,8 +197,8 @@ ul {
 
 
 .nav__menu-items {
-  /* display: none; */
-  display: block;
+   display: none;
+  /*display: block;*/
   width: 140px;
   height: 65px;
   color: #ffffff;
