@@ -3,12 +3,27 @@ import React, { useState, useEffect } from "react";
 
 function HeaderApp() {
   let [addClassIcon, setAddClassIcon] = useState("menu");
+  let [addClassNav, setAddClassNav] = useState();
+  let [count, setCount] = useState(0);
+  //let [addClassMenuitems, setAddClassMenuitems] = useState("nav__menu-items");
   function ActionHamburger() {
-    if (addClassIcon === "menu") {
+    
+    if(count == 0){
       setAddClassIcon(addClassIcon + " opened")
-    } else {
+      setAddClassNav("nav__menu-lists");
+      setCount(count + 1);
+    }else{
       setAddClassIcon("menu")
+      setAddClassNav();
+      setCount(count - 1);
     }
+    //setAddClassMenuitems("nav__menu-items");
+    // if (addClassIcon === "menu") {
+    //   setAddClassIcon(addClassIcon + " opened")
+    // } else {
+    //   setAddClassIcon("menu")
+    // }
+    
   }
 
 
@@ -16,7 +31,7 @@ function HeaderApp() {
 
     <div className='Header-app'>
       <img src="../images/logo2.png" />
-      <i className="btn-icon nav__menu">
+      <i className="nav__menu">
         
 
         <button className={addClassIcon} onClick={() => { ActionHamburger() }} aria-label="Main Menu">
@@ -27,7 +42,7 @@ function HeaderApp() {
           </svg>
 
         </button>
-        <ul class="nav__menu-lists nav__menu--2-lists">
+        <ul class={addClassNav}>
           <li class="nav__menu-items">เกี่ยวกับ</li>
           <li class="nav__menu-items">สถานที่</li>
           <li class="nav__menu-items">ติดต่อ</li>
